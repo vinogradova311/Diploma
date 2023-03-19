@@ -96,8 +96,8 @@ public class PaymentTest {
 
 
     @Test
-   @DisplayName("Поле Номер карты 15 цифр")
-   public void cardWith15Numbers() {
+    @DisplayName("Поле Номер карты 15 цифр")
+    public void cardWith15Numbers() {
         var CardInfo = DataHelper.getCardWithLessChars();
         PaymentPage paymentPage = homePage.paymentButtonClick();
         paymentPage.inputData(CardInfo);

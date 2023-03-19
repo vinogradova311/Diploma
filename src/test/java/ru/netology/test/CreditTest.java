@@ -92,8 +92,8 @@ public class CreditTest {
                 shouldHave(text("Поле обязательно для заполнения"));
     }
 
-    //"Поле Номер карты 15 цифр"
     @Test
+    @DisplayName("Поле Номер карты 15 цифр")
     public void cardWith15Numbers() {
         var CardInfo = DataHelper.getCardWithLessChars();
         CreditPage creditPage = homePage.creditButtonClick();
@@ -101,8 +101,8 @@ public class CreditTest {
         creditPage.invalidCardNumber();
     }
 
-    //"Поле Номер карты 17 цифр"
     @Test
+    @DisplayName("Поле Номер карты 17 цифр")
     public void cardWith17Numbers() {
         var CardInfo = DataHelper.getCardWithMoreChars();
         CreditPage creditPage = homePage.creditButtonClick();
@@ -110,8 +110,8 @@ public class CreditTest {
         creditPage.getSuccessNotification();
     }
 
-    //"Поле Номер карты буквы"
     @Test
+    @DisplayName("Поле Номер карты буквы")
     public void cardWithLetters() {
         var CardInfo = DataHelper.getCardWithLetters();
         CreditPage creditPage = homePage.creditButtonClick();
@@ -119,8 +119,8 @@ public class CreditTest {
         creditPage.invalidCardNumber();
     }
 
-    //"Поле Номер карты символы"
     @Test
+    @DisplayName("Поле Номер карты спецсимволами")
     public void cardWithSymbols() {
         var CardInfo = DataHelper.getCardWithSymbols();
         CreditPage creditPage = homePage.creditButtonClick();
@@ -128,8 +128,8 @@ public class CreditTest {
         creditPage.invalidCardNumber();
     }
 
-    //"Поле Номер карты пустое"
     @Test
+    @DisplayName("Поле Номер карты пустое")
     public void cardEmpty() {
         var CardInfo = DataHelper.getCardEmpty();
         CreditPage creditPage = homePage.creditButtonClick();
@@ -137,8 +137,8 @@ public class CreditTest {
         creditPage.requiredCard();
     }
 
-    //"Поле Месяц число 13-99
     @Test
+    @DisplayName("Поле Месяц число 13-99")
     public void invalidMonth() {
         var CardInfo = DataHelper.getInvalidMonthBetween13And99();
         CreditPage creditPage = homePage.creditButtonClick();
@@ -146,8 +146,8 @@ public class CreditTest {
         creditPage.invalidCardExpirationDateMonth();
     }
 
-    //"Поле Месяц 1 число"
     @Test
+    @DisplayName("Поле Месяц 1 цифра")
     public void monthWith1Number() {
         var CardInfo = DataHelper.getMonthWithLessChars();
         CreditPage creditPage = homePage.creditButtonClick();
@@ -155,8 +155,8 @@ public class CreditTest {
         creditPage.invalidMonth();
     }
 
-    //"Поле Месяц 3 число"
     @Test
+    @DisplayName("Поле Месяц 3 цифры")
     public void monthWith3Number() {
         var CardInfo = DataHelper.getMonthWithMoreChars();
         CreditPage creditPage = homePage.creditButtonClick();
@@ -164,8 +164,8 @@ public class CreditTest {
         creditPage.getSuccessNotification();
     }
 
-    // "Поле Месяц буквы"
     @Test
+    @DisplayName("Поле Месяц буквами")
     public void monthWithLetters() {
         var CardInfo = DataHelper.getMonthWithLetters();
         CreditPage creditPage = homePage.creditButtonClick();
@@ -173,8 +173,8 @@ public class CreditTest {
         creditPage.invalidMonth();
     }
 
-    // "Поле Месяц символы"
     @Test
+    @DisplayName("Поле Месяц спецсимволами")
     public void monthWithSymbols() {
         var CardInfo = DataHelper.getMonthWithSymbols();
         CreditPage creditPage = homePage.creditButtonClick();
@@ -183,8 +183,8 @@ public class CreditTest {
     }
 
 
-    //"Поле Месяц пустое"
     @Test
+    @DisplayName("Поле Месяц пустое")
     public void emptyMonth() {
         var CardInfo = DataHelper.getMonthEmpty();
         CreditPage creditPage = homePage.creditButtonClick();
@@ -192,8 +192,8 @@ public class CreditTest {
         creditPage.requiredMonth();
     }
 
-    // "Поле Год Истек срок действия"
     @Test
+    @DisplayName("Поле Год Истек срок действия")
     public void cardExpiredByYear() {
         var CardInfo = DataHelper.getCardExpiredByYear();
         CreditPage creditPage = homePage.creditButtonClick();
@@ -201,8 +201,8 @@ public class CreditTest {
         creditPage.cardExpired();
     }
 
-    //"Поле Год 29-99"
     @Test
+    @DisplayName("Поле Год число 29-99")
     public void invalidExpirationDate() {
         var CardInfo = DataHelper.getInvalidExpirationDate();
         CreditPage creditPage = homePage.creditButtonClick();
@@ -210,8 +210,8 @@ public class CreditTest {
         creditPage.invalidCardExpirationDateYear();
     }
 
-    //"Поле Год 3 числа"
     @Test
+    @DisplayName("Поле Год 3 цифры")
     public void yearWithMoreChars() {
         var CardInfo = DataHelper.getYearWithMoreChars();
         CreditPage creditPage = homePage.creditButtonClick();
@@ -219,8 +219,8 @@ public class CreditTest {
         creditPage.getSuccessNotification();
     }
 
-    //"Поле Год 1 число"
     @Test
+    @DisplayName("Поле Год 1 цифра")
     public void yearWithLessChars() {
         var CardInfo = DataHelper.getYearWithLessChars();
         CreditPage creditPage = homePage.creditButtonClick();
@@ -228,8 +228,8 @@ public class CreditTest {
         creditPage.invalidYear();
     }
 
-    // "Поле Год символы"
     @Test
+    @DisplayName("Поле Год спецсимволами")
     public void yearWithSymbols() {
         var CardInfo = DataHelper.getYearWithSymbols();
         CreditPage creditPage = homePage.creditButtonClick();
@@ -237,8 +237,8 @@ public class CreditTest {
         creditPage.invalidYear();
     }
 
-    // "Поле Год буквы"
     @Test
+    @DisplayName("Поле Год буквами")
     public void yearWithLetters() {
         var CardInfo = DataHelper.getYearWithLetters();
         CreditPage creditPage = homePage.creditButtonClick();
@@ -246,8 +246,8 @@ public class CreditTest {
         creditPage.invalidYear();
     }
 
-    // "Поле Год пустое"
     @Test
+    @DisplayName("Поле Год пустое")
     public void yearEmpty() {
         var CardInfo = DataHelper.getYearEmpty();
         CreditPage creditPage = homePage.creditButtonClick();
@@ -256,8 +256,8 @@ public class CreditTest {
     }
 
 
-    //"Поле Владелец символами кириллицы"
     @Test
+    @DisplayName("Поле Владелец кириллицей")
     public void cardholderRus() {
         var CardInfo = DataHelper.getCardholderRussian();
         CreditPage creditPage = homePage.creditButtonClick();
@@ -265,8 +265,8 @@ public class CreditTest {
         creditPage.invalidCardholder();
     }
 
-    //"Поле Владелец цифры"
     @Test
+    @DisplayName("Поле Владелец цифрами")
     public void cardholderWithNumbers() {
         var CardInfo = DataHelper.getCardholderWithNumbers();
         CreditPage creditPage = homePage.creditButtonClick();
@@ -274,8 +274,8 @@ public class CreditTest {
         creditPage.invalidCardholder();
     }
 
-    //"Поле Владелец символы"
     @Test
+    @DisplayName("Поле Владелец спецсимволами")
     public void cardholderWithSymbols() {
         var CardInfo = DataHelper.getCardholderWithSymbols();
         CreditPage creditPage = homePage.creditButtonClick();
@@ -283,8 +283,8 @@ public class CreditTest {
         creditPage.invalidCardholder();
     }
 
-    //"Поле Владелец пустое"
     @Test
+    @DisplayName("Поле Владелец пустое")
     public void cardholderEmpty() {
         var CardInfo = DataHelper.getEmptyCardholder();
         CreditPage creditPage = homePage.creditButtonClick();
@@ -292,8 +292,8 @@ public class CreditTest {
         creditPage.requiredHolder();
     }
 
-
     @Test
+    @DisplayName("Поле CCV/CVC 2 цифрами")
     public void codeWith2Numbers() {
         var CardInfo = DataHelper.getCodeWithLessChars();
         CreditPage creditPage = homePage.creditButtonClick();
@@ -302,6 +302,7 @@ public class CreditTest {
     }
 
     @Test
+    @DisplayName("Поле CCV/CVC 4 цифрами")
     public void codeWith4Numbers() {
         var CardInfo = DataHelper.getCodeWithMoreChars();
         CreditPage creditPage = homePage.creditButtonClick();
@@ -310,6 +311,7 @@ public class CreditTest {
     }
 
     @Test
+    @DisplayName("Поле CCV/CVC буквами")
     public void codeWithLetters() {
         var CardInfo = DataHelper.getCodeWithLetters();
         CreditPage creditPage = homePage.creditButtonClick();
@@ -318,6 +320,7 @@ public class CreditTest {
     }
 
     @Test
+    @DisplayName("Поле CCV/CVC спецсимволами")
     public void codeWithSymbols() {
         var CardInfo = DataHelper.getCodeWithSymbols();
         CreditPage creditPage = homePage.creditButtonClick();
@@ -325,10 +328,9 @@ public class CreditTest {
         creditPage.invalidCode();
     }
 
-
     @Test
+    @DisplayName("Поле CCV/CVC пустое")
     public void codeEmpty() {
-
         var CardInfo = DataHelper.getEmptyCode();
         CreditPage creditPage = homePage.creditButtonClick();
         creditPage.inputData(CardInfo);

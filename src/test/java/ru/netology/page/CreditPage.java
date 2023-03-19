@@ -64,19 +64,24 @@ public class CreditPage {
         errorButton.click();
         errorNotification.should(hidden);
     }
+
     public void invalidCardNumber() {
 
         cardNumberFieldError.shouldHave(text("Неверный формат")).shouldBe(visible, Duration.ofSeconds(6));
     }
+
     public void requiredCard() {
         cardNumberFieldError.shouldHave(text("Поле обязательно для заполнения")).shouldBe(visible, Duration.ofSeconds(6));
     }
+
     public void invalidMonth() {
         monthFieldError.shouldHave(text("Неверный формат")).shouldBe(visible, Duration.ofSeconds(6));
     }
+
     public void requiredMonth() {
         monthFieldError.shouldHave(text("Поле обязательно для заполнения")).shouldBe(visible, Duration.ofSeconds(6));
     }
+
     public void invalidCardExpirationDateMonth() {
         monthFieldError.shouldHave(text("Неверно указан срок действия карты")).shouldBe(visible, Duration.ofSeconds(6));
     }
@@ -92,6 +97,7 @@ public class CreditPage {
     public void invalidCardExpirationDateYear() {
         yearFieldError.shouldHave(text("Неверно указан срок действия карты")).shouldBe(visible, Duration.ofSeconds(6));
     }
+
     public void requiredYear() {
         yearFieldError.shouldHave(text("Поле обязательно для заполнения")).shouldBe(visible, Duration.ofSeconds(6));
     }
@@ -107,6 +113,7 @@ public class CreditPage {
     public void invalidCode() {
         codeFieldError.shouldHave(text("Неверный формат")).shouldBe(visible, Duration.ofSeconds(6));
     }
+
     public void requiredCode() {
         codeFieldError.shouldHave(text("Поле обязательно для заполнения")).shouldBe(visible, Duration.ofSeconds(6));
     }

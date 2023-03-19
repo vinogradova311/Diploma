@@ -51,6 +51,7 @@ public class DataHelper {
     public static CardInfo getValidData() {
         return new CardInfo(fakerEng.numerify("#### #### #### ####"), getMonth(1), String.valueOf(fakerEng.number().numberBetween(24, 28)), fakerEng.name().fullName().toUpperCase(), fakerEng.numerify("###"));
     }
+
     public static CardInfo getCardEmpty() {
         return new CardInfo("", getMonth(1), getYear(1), getCardholder(), getCode());
     }
@@ -81,7 +82,7 @@ public class DataHelper {
     }
 
     public static CardInfo getMonthWithMoreChars() {
-        return new CardInfo("4444 4444 4444 4441", fakerEng.numerify("0##"), getYear(1), getCardholder(), getCode());
+        return new CardInfo("4444 4444 4444 4441", fakerEng.numerify("04#"), getYear(1), getCardholder(), getCode());
     }
 
     public static CardInfo getInvalidMonthBetween13And99() {
@@ -98,7 +99,7 @@ public class DataHelper {
 
 
     public static CardInfo getYearEmpty() {
-        return new CardInfo("444 4444 4444 4441", getMonth(1), "", getCardholder(), getCode());
+        return new CardInfo("4444 4444 4444 4441", getMonth(1), "", getCardholder(), getCode());
     }
 
     public static CardInfo getYearWithLessChars() {

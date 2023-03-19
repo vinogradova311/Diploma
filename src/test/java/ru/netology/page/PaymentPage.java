@@ -13,7 +13,6 @@ import static com.codeborne.selenide.Selenide.$x;
 public class PaymentPage {
 
 
-
     private final SelenideElement heading = $$("h3").find(text("Оплата по карте"));
     private final SelenideElement cardNumberField = $(byText("Номер карты")).parent().$(".input__control");
     private final SelenideElement monthField = $(byText("Месяц")).parent().$(".input__control");
@@ -64,19 +63,24 @@ public class PaymentPage {
         errorNotification.$("[class=notification__content]").should(text("Ошибка! Банк отказал в проведении операции."));
 
     }
+
     public void invalidCardNumber() {
 
         cardNumberFieldError.shouldHave(text("Неверный формат")).shouldBe(visible, Duration.ofSeconds(6));
     }
+
     public void requiredCard() {
         cardNumberFieldError.shouldHave(text("Поле обязательно для заполнения")).shouldBe(visible, Duration.ofSeconds(6));
     }
+
     public void invalidMonth() {
         monthFieldError.shouldHave(text("Неверный формат")).shouldBe(visible, Duration.ofSeconds(6));
     }
+
     public void requiredMonth() {
         monthFieldError.shouldHave(text("Поле обязательно для заполнения")).shouldBe(visible, Duration.ofSeconds(6));
     }
+
     public void invalidCardExpirationDateMonth() {
         monthFieldError.shouldHave(text("Неверно указан срок действия карты")).shouldBe(visible, Duration.ofSeconds(6));
     }
@@ -92,6 +96,7 @@ public class PaymentPage {
     public void invalidCardExpirationDateYear() {
         yearFieldError.shouldHave(text("Неверно указан срок действия карты")).shouldBe(visible, Duration.ofSeconds(6));
     }
+
     public void requiredYear() {
         yearFieldError.shouldHave(text("Поле обязательно для заполнения")).shouldBe(visible, Duration.ofSeconds(6));
     }
@@ -107,6 +112,7 @@ public class PaymentPage {
     public void invalidCode() {
         codeFieldError.shouldHave(text("Неверный формат")).shouldBe(visible, Duration.ofSeconds(6));
     }
+
     public void requiredCode() {
         codeFieldError.shouldHave(text("Поле обязательно для заполнения")).shouldBe(visible, Duration.ofSeconds(6));
     }
